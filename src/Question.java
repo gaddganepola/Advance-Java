@@ -8,7 +8,15 @@ public class Question {
     private String opt4;
     private String answer;
 
-
+    public Question(int id, String answer, String question, String opt1, String opt2, String opt3, String opt4) {
+        this.id = id;
+        this.answer = answer;
+        this.question = question;
+        this.opt1 = opt1;
+        this.opt2 = opt2;
+        this.opt3 = opt3;
+        this.opt4 = opt4;
+    }
 
     public void setId(int id) {
         this.id = id;
@@ -64,5 +72,16 @@ public class Question {
 
     public String getAnswer() {
         return answer;
+    }
+
+    @Override
+    public String toString() {
+        return  "Question No=" + id +
+                ", Question='" + question + '\'' +
+                ", Option 01='" + opt1 + '\'' +
+                ", Option 02='" + opt2 + '\'' +
+                ", Option 03='" + opt3 + '\'' +
+                ", Option 04='" + opt4 + '\'' +
+                ", Answer='" + answer + '\'';
     }
 }
