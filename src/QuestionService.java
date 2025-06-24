@@ -1,7 +1,11 @@
+import java.util.Scanner;
+
 public class QuestionService {
 
     //Store 5 questions
     Question[] questions = new Question[5];
+    Scanner sc =new Scanner(System.in);
+    String[] userAnswers = new String[5];
 
     //Manually create questions by constructor
     public QuestionService() {
@@ -18,5 +22,23 @@ public class QuestionService {
             System.out.println(q.toString());
         }
     }
+
+    //Display question, answers and get user input
+    public void playQuiz(){
+        int i = 0;
+        for (Question q : questions){
+            System.out.println(q.getId() + ". " + q.getQuestion());
+            System.out.println("*. " + q.getOpt1() + "\t*. " + q.getOpt2() + "\t*. " + q.getOpt3() + "\t*. " + q.getOpt4());
+            System.out.print("Your answer: ");
+            userAnswers[i] = sc.nextLine();
+            i++;
+        }
+
+        for (String s : userAnswers){
+            System.out.println(s);
+        }
+    }
+
+
 
 }
