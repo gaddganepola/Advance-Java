@@ -7,6 +7,8 @@ public class QuestionService {
     Scanner sc =new Scanner(System.in);
     String[] userAnswers = new String[5];
 
+    int result = 0;
+
     //Manually create questions by constructor
     public QuestionService() {
         questions[0] = new Question(1, "What is the capital of France?", "Paris", "London", "Berlin", "Madrid", "Paris");
@@ -34,8 +36,40 @@ public class QuestionService {
             i++;
         }
 
-        for (String s : userAnswers){
-            System.out.println(s);
+//        for (String s : userAnswers){
+//            System.out.println(s);
+//        }
+    }
+
+//    public int displayResults(){
+//        for (Question q : questions){
+//            if (q.getAnswer().equals(userAnswers[q.getId()-1])  ){
+//                result++;
+//            }
+//
+//        }
+//        return result;
+//    }
+
+    //Print results
+    public void printScore(){
+        for (int i = 0; i < questions.length; i++){
+            String actualAnswer = questions[i].getAnswer();
+            String userAnswer = userAnswers[i];
+
+            if (actualAnswer.equals(userAnswer)){
+                result++;
+            }else{
+                userAnswers[i] = "WRONG";
+            }
+        }
+
+        System.out.println("Your Score: " + result);
+
+        for (int i = 0; i < userAnswers.length; i++){
+            if (userAnswers[i].equals("WRONG")){
+                System.out.println(questions[i].getQuestion() + " Correct Answer: " + questions[i].getAnswer());
+            }
         }
     }
 
