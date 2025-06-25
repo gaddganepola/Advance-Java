@@ -1,7 +1,5 @@
-class Computer {
-    public void coding(){
-
-    }
+abstract class Computer {
+    public abstract void coding();
 }
 
 class Desktop extends Computer {
