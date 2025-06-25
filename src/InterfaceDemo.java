@@ -9,6 +9,30 @@ interface AInterface {
     void config();
 }
 
+interface X {
+    void run();
+}
+
+//Interface can extends another interface
+interface Y extends X {
+
+}
+
+//Single class can implements multiple interfaces
+class CClass implements AInterface, Y {
+    //Need to define all the methods of interfaces
+    //Here need to define the run method because we implements the Y interface amd that extends the X interface which hold run method
+    public void show() {
+        System.out.println("in show");
+    }
+    public void config() {
+        System.out.println("in config");
+    }
+    public void run() {
+        System.out.println("in run");
+    }
+}
+
 class BClass implements AInterface {
 
     public void show() {
@@ -34,5 +58,10 @@ public class InterfaceDemo {
 
         obj.show();
         obj.config();
+
+        CClass obj1 = new CClass();
+        obj1.show();
+        obj1.config();
+        obj1.run();
     }
 }
