@@ -17,8 +17,8 @@ class Laptop extends Computer {
 }
 
 class Developer {
-    public void devApp(Computer lap){
-        lap.coding();
+    public void devApp(Computer com){
+        com.coding();
     }
 }
 
