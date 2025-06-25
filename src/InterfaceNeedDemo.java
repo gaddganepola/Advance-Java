@@ -1,6 +1,6 @@
 class Computer {
     public void coding(){
-        System.out.println("coding by using computer");
+
     }
 }
 
