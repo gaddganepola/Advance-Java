@@ -1,14 +1,14 @@
-abstract class Computer {
-    public abstract void coding();
+interface Computer {
+    void coding();
 }
 
-class Desktop extends Computer {
+class Desktop implements Computer {
     public void coding(){
         System.out.println("coding by using desktop");
     }
 }
 
-class Laptop extends Computer {
+class Laptop implements Computer {
     public void coding(){
         System.out.println("coding by using laptop");
     }
