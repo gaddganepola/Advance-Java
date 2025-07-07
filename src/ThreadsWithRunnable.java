@@ -34,5 +34,33 @@ public class ThreadsWithRunnable {
         t1.start();
         t2.start();
 
+        //Using lambda expression
+        Runnable r1 = () -> {
+            for (int i = 0; i < 5; i++) {
+                System.out.println("Hi from lambda expression");
+                try {
+                    Thread.sleep(5);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        };
+
+        Runnable r2 = () -> {
+            for (int i = 0; i < 5; i++) {
+                System.out.println("Hello from lambda expression");
+                try {
+                    Thread.sleep(5);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        };
+
+        Thread t3 = new Thread(r1);
+        Thread t4 = new Thread(r2);
+        t3.start();
+        t4.start();
+
     }
 }
