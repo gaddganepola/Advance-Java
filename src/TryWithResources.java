@@ -16,7 +16,14 @@ public class TryWithResources {
         } catch (Exception e) {
             System.out.println("Something went wrong");
         } finally {
+            while (System.in.read() != '\n');
             br.close();
+        }
+
+        //Try with resources
+        try (BufferedReader br1 = new BufferedReader(new InputStreamReader(System.in))) {
+            int num1 = Integer.parseInt(br1.readLine());
+            System.out.println(num1);
         }
     }
 }
