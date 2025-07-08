@@ -35,7 +35,7 @@ public class ArrayListDemo {
         nums1.add(4);
         nums1.add(5);
 
-        for (Integer i : nums1) {
+        for (int i : nums1) {
             System.out.println(i);
         }
 
