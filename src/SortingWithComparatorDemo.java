@@ -25,6 +25,9 @@ public class SortingWithComparatorDemo {
             }
         };
 
+        //Sorting using lambda
+        Comparator<Integer> comex = (i, j) -> i%10 > j%10 ? 1 : -1;
+
         System.out.println("Before sorting: ");
         for (Integer num : nums) {
             System.out.print(num + " ");
